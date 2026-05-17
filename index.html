@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Audio Gear Finder | Find the Best Headphones by Budget &amp; Listening Style</title>
+<meta name="description" content="Audio Gear Finder helps shoppers find headphones based on budget, listening style, comfort, features, and everyday use. Compare curated headphone picks for music, gaming, commuting, workouts, and more."/>
+<link rel="canonical" href="https://audiogearfinder.net/"/>
+<meta property="og:title" content="Audio Gear Finder"/>
+<meta property="og:description" content="Find headphones by budget, listening preference, comfort, and everyday use."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://audiogearfinder.net/"/>
+<meta property="og:image" content="https://audiogearfinder.net/social-preview.jpg"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Audio Gear Finder","url":"https://audiogearfinder.net/","description":"Audio Gear Finder helps shoppers find headphones based on budget, listening style, comfort, features, and everyday use."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Audio Gear Finder","url":"https://audiogearfinder.net/","email":"contact.audiogearfinder@gmail.com"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#0d0f14;color:#f5f7ff;min-height:100vh;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cardIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.anim-float{animation:float 2s ease-in-out infinite;}
+.anim-1{animation:fadeUp .8s ease both;}
+.anim-2{animation:fadeUp .8s .2s ease both;}
+.anim-3{animation:fadeUp .8s .4s ease both;}
+.anim-4{animation:fadeUp .8s .6s ease both;}
+
+/* ── Hero ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden;text-align:center;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(255,255,255,.03) 0%,transparent 100%);pointer-events:none;}
+.hero-icon{width:96px;height:96px;border-radius:50%;background:#111520;border:1px solid #1e2230;display:flex;align-items:center;justify-content:center;box-shadow:0 25px 50px -12px rgba(0,0,0,.5);margin-bottom:32px;position:relative;}
+.hero-icon::before{content:'';position:absolute;inset:0;border-radius:50%;background:rgba(255,76,96,.2);filter:blur(20px);z-index:-1;}
+.hero-title{font-size:clamp(2.5rem,7vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:24px;max-width:900px;}
+.hero-title span{background:linear-gradient(to right,#ff4c60,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:1.1rem;color:#8892a4;max-width:600px;line-height:1.6;margin-bottom:40px;}
+.btn-hero{display:inline-flex;align-items:center;gap:8px;background:#ff4c60;color:white;border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:1.1rem;padding:14px 32px;border-radius:9999px;box-shadow:0 0 40px -10px rgba(255,76,96,.5);transition:box-shadow .3s,transform .2s;}
+.btn-hero:hover{box-shadow:0 0 60px -15px rgba(255,76,96,.7);transform:translateY(-1px);}
+
+/* ── Finder ── */
+.finder{padding:96px 24px;border-top:1px solid rgba(30,34,48,.5);background:#d1d5db;}
+.section-inner{max-width:900px;margin:0 auto;}
+.section-header{text-align:center;margin-bottom:64px;}
+.section-header h2{font-size:1.75rem;font-weight:700;color:#1a1a1a;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.section-header p{color:#555;}
+.finder-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:40px;}
+@media(min-width:768px){.finder-grid{grid-template-columns:1fr 1fr 1fr;}}
+.finder-label{display:block;font-size:.7rem;font-weight:500;color:#555;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;}
+select{width:100%;height:56px;padding:0 40px 0 16px;background:#0d0f14;color:#f5f7ff;border:1px solid rgba(30,34,48,.5);border-radius:.5rem;font-family:inherit;font-size:1rem;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238892a4' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;transition:border-color .2s;}
+select:hover,select:focus{border-color:rgba(255,76,96,.5);outline:none;}
+select option{background:#0d0f14;}
+.flex-center{display:flex;justify-content:center;}
+.btn-recs{display:inline-flex;align-items:center;justify-content:center;background:#ff4c60;color:white;border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:1.05rem;height:56px;padding:0 40px;border-radius:.5rem;width:100%;transition:background .2s;}
+.btn-recs:hover{background:#e63c50;}
+@media(min-width:768px){.btn-recs{width:auto;}}
+
+/* ── Results ── */
+.results{padding:64px 24px;background:#b8bcc4;display:none;}
+.results.visible{display:block;}
+.results-inner{max-width:1200px;margin:0 auto;}
+.results-title{font-size:1.4rem;font-weight:700;margin-bottom:32px;display:flex;align-items:center;gap:12px;color:#1a1a1a;}
+.results-bar{width:32px;height:4px;background:#ff4c60;border-radius:9999px;flex-shrink:0;}
+.cards-grid{display:grid;grid-template-columns:1fr;gap:24px;}
+@media(min-width:768px){.cards-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1024px){.cards-grid{grid-template-columns:1fr 1fr 1fr;}}
+
+/* ── Card ── */
+.card{border-radius:16px;overflow:hidden;background:#f9f8f6;border:1px solid #e2e0dc;color:#1a1a1a;transition:box-shadow .3s;animation:cardIn .5s ease both;}
+.card:hover{box-shadow:0 20px 40px rgba(0,0,0,.15);}
+.card-img{height:180px;background:#f2f1ee;display:flex;align-items:center;justify-content:center;padding:20px;position:relative;}
+.card-img img{max-width:88%;max-height:140px;width:auto;height:auto;object-fit:contain;display:block;}
+.card-badge{position:absolute;bottom:12px;left:16px;background:white;color:#333;font-size:.65rem;font-weight:600;padding:2px 10px;border-radius:9999px;box-shadow:0 1px 3px rgba(0,0,0,.1);}
+.card-fallback{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.card-body{padding:24px;}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
+.card-name{font-size:1.05rem;font-weight:700;line-height:1.3;}
+.card-price{font-size:1rem;font-weight:700;color:#444;margin-left:12px;white-space:nowrap;}
+.card-desc{font-size:.85rem;color:#555;line-height:1.6;margin-bottom:16px;}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
+.tag{background:#e8e6e1;color:#333;font-size:.65rem;font-weight:500;padding:2px 8px;border-radius:9999px;}
+.card-foot{display:flex;align-items:center;justify-content:space-between;}
+.card-rating{font-size:.75rem;color:#888;}
+.btn-deal{display:inline-flex;align-items:center;gap:6px;background:#e8e6e1;color:#333;border:none;cursor:pointer;font-family:inherit;font-size:.8rem;font-weight:500;padding:6px 14px;border-radius:9999px;transition:background .2s,color .2s;}
+.card:hover .btn-deal{background:#ff4c60;color:white;}
+
+/* ── Guides ── */
+.guides{padding:96px 24px;border-top:1px solid rgba(30,34,48,.5);background:#d1d5db;}
+.guides h2{font-size:1.75rem;font-weight:700;margin-bottom:40px;text-align:center;color:#1a1a1a;}
+.guide-list{max-width:750px;margin:0 auto;display:flex;flex-direction:column;gap:16px;}
+.guide-item{background:white;border:1px solid #b0b4bc;border-radius:16px;overflow:hidden;}
+.guide-btn{width:100%;text-align:left;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;background:none;border:none;cursor:pointer;color:#1a1a1a;font-family:inherit;}
+.guide-btn h4{font-size:1rem;font-weight:700;}
+.guide-chev{width:20px;height:20px;color:#555;transition:transform .3s;flex-shrink:0;}
+.guide-chev.open{transform:rotate(90deg);}
+.guide-body{padding:16px 24px 24px;color:#2a2a2a;font-size:.875rem;line-height:1.7;border-top:1px solid #d1d5db;display:none;}
+.guide-body.open{display:block;}
+.guide-body h3{font-size:.95rem;font-weight:600;margin:18px 0 6px;color:#1a1a1a;}
+.guide-body h3:first-child{margin-top:0;}
+.guide-body p{margin-bottom:10px;}
+.guide-body ul{margin:0 0 10px 20px;}
+.guide-body li{margin-bottom:3px;}
+.guide-body .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:10px;}
+.guide-body .col-head{font-weight:600;margin-bottom:4px;}
+
+/* ── About ── */
+.about{padding:80px 24px;border-top:1px solid rgba(30,34,48,.5);background:#d1d5db;}
+.about-inner{max-width:750px;margin:0 auto;}
+.about-btn{display:flex;align-items:center;justify-content:center;gap:12px;background:none;border:none;cursor:pointer;font-family:inherit;color:#1a1a1a;width:100%;}
+.about-btn h2{font-size:1.75rem;font-weight:700;}
+.about-body{padding-top:32px;text-align:center;color:#333;line-height:1.8;display:none;}
+.about-body.open{display:block;}
+.about-body p{margin-bottom:16px;}
+
+/* ── Footer ── */
+footer{padding:40px 24px;text-align:center;border-top:1px solid rgba(30,34,48,.5);background:#0d0f14;color:white;}
+footer p{font-size:.875rem;margin-bottom:4px;}
+.foot-links{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:12px;flex-wrap:wrap;opacity:.7;}
+.foot-links button,.foot-links a{background:none;border:none;cursor:pointer;color:inherit;font-family:inherit;font-size:.75rem;text-decoration:none;}
+.foot-links button:hover,.foot-links a:hover{opacity:1;}
+
+/* ── Modal ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:50;display:none;align-items:center;justify-content:center;padding:16px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:white;border-radius:16px;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;padding:32px;color:#1f2937;font-size:.875rem;line-height:1.6;}
+.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+.modal-head h3{font-size:1.2rem;font-weight:700;}
+.modal-close{background:none;border:none;cursor:pointer;color:#9ca3af;font-size:1.5rem;line-height:1;}
+.modal-close:hover{color:#374151;}
+.modal-box h4{font-weight:600;margin:14px 0 4px;}
+.modal-box p{margin-bottom:10px;color:#374151;}
+.modal-box a{color:#2563eb;}
+.modal-date{font-size:.75rem;color:#6b7280;margin-bottom:14px;}
+
+/* ── Product Detail Modal ── */
+.product-detail-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:50;display:none;align-items:center;justify-content:center;padding:16px;}
+.product-detail-overlay.open{display:flex;}
+.product-detail-box{background:white;border-radius:16px;max-width:480px;width:100%;max-height:85vh;overflow-y:auto;padding:32px;color:#1f2937;font-size:.875rem;line-height:1.6;}
+.pd-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;}
+.pd-name{font-size:1.15rem;font-weight:700;color:#1a1a1a;margin-bottom:4px;}
+.pd-price{font-size:1.4rem;font-weight:800;color:#ff4c60;}
+.pd-close{background:none;border:none;cursor:pointer;color:#9ca3af;font-size:1.5rem;line-height:1;margin-left:12px;flex-shrink:0;}
+.pd-close:hover{color:#374151;}
+.pd-img{height:180px;background:#f2f1ee;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:20px;margin-bottom:16px;}
+.pd-img img{max-width:85%;max-height:140px;width:auto;height:auto;object-fit:contain;}
+.pd-meta{margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.pd-badge{background:#1a1a1a;color:white;font-size:.65rem;font-weight:600;padding:2px 10px;border-radius:9999px;}
+.pd-rating{font-size:.75rem;color:#888;}
+.pd-desc{color:#444;margin-bottom:14px;line-height:1.7;}
+.pd-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.pd-tag{background:#e8e6e1;color:#333;font-size:.65rem;font-weight:500;padding:2px 8px;border-radius:9999px;}
+.pd-use-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:6px;}
+.pd-uses{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.pd-use{background:#f0e8d5;color:#b87c30;font-size:.7rem;padding:3px 10px;border-radius:9999px;}
+.pd-note{font-size:.75rem;color:#999;font-style:italic;border-top:1px solid #e8e6e1;padding-top:12px;}
+
+/* ── Results Disclosure ── */
+.results-disclosure{font-size:.75rem;color:#555;margin-bottom:24px;line-height:1.55;background:#fff8f0;border:1px solid #fde9cc;border-radius:8px;padding:10px 14px;}
+.results-disclosure strong{color:#7a5a30;}
+
+/* ── Store Links in Cards ── */
+.card-stores{padding:10px 24px 18px;border-top:1px solid #e8e6e1;}
+.store-label{font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#999;margin-bottom:6px;}
+.btn-store{display:flex;align-items:center;justify-content:space-between;background:#f0eeea;color:#333;padding:7px 12px;border-radius:9999px;font-size:.75rem;font-weight:500;text-decoration:none;margin-bottom:5px;transition:background .2s,color .2s;}
+.btn-store:last-child{margin-bottom:0;}
+.btn-store:hover{background:#ff4c60;color:white;}
+.btn-store svg{flex-shrink:0;margin-left:8px;}
+
+/* ── More Buying Guides ── */
+.more-guides{padding:64px 24px;background:#d1d5db;border-top:1px solid rgba(30,34,48,.15);}
+.more-guides-inner{max-width:750px;margin:0 auto;}
+.more-guides h3{font-size:1.4rem;font-weight:700;text-align:center;margin-bottom:24px;color:#1a1a1a;}
+.guide-links-grid{display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:540px){.guide-links-grid{grid-template-columns:1fr 1fr;}}
+.guide-ext-link{display:flex;align-items:center;gap:8px;background:white;border:1px solid #d1d5db;border-radius:10px;padding:14px 16px;font-size:.875rem;font-weight:600;color:#1a1a1a;text-decoration:none;transition:border-color .2s;}
+.guide-ext-link:hover{border-color:#ff4c60;}
+.guide-ext-link::before{content:'→';color:#ff4c60;flex-shrink:0;}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section class="hero">
+  <div class="hero-icon anim-float anim-1">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#8892a4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+    </svg>
+  </div>
+  <h1 class="hero-title anim-2">Find the Right <br/><span>Headphones</span></h1>
+  <p class="hero-sub anim-3">Smart personalized recommendations based on your needs. Tell us what you're looking for, and we'll surface the perfect pick.</p>
+  <div class="anim-4">
+    <button class="btn-hero" onclick="showFinder()">
+      Get Started
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FINDER ═══════════════════════════════ -->
+<section class="finder" id="finder" style="display:none">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff4c60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+        Personalize Your Search
+      </h2>
+      <p>Select your preferences below to get tailored matches.</p>
+    </div>
+    <div class="finder-grid">
+      <div>
+        <label class="finder-label">Budget</label>
+        <select id="sel-budget">
+          <option value="">Any Budget</option>
+          <option value="under100">Under $100</option>
+          <option value="mid">$100–$300</option>
+          <option value="high">$300+</option>
+        </select>
+      </div>
+      <div>
+        <label class="finder-label">Use Case</label>
+        <select id="sel-use">
+          <option value="">Any Use Case</option>
+          <option value="Music Listening">🎵 Music Listening</option>
+          <option value="Gaming">🎮 Gaming</option>
+          <option value="Studio">🎙 Studio</option>
+          <option value="Commuting">🚆 Commuting</option>
+        </select>
+      </div>
+      <div>
+        <label class="finder-label">Type</label>
+        <select id="sel-type">
+          <option value="">Any Type</option>
+          <option value="Over-Ear">Over-Ear</option>
+          <option value="On-Ear">On-Ear</option>
+          <option value="In-Ear">In-Ear</option>
+        </select>
+      </div>
+    </div>
+    <div class="flex-center">
+      <button class="btn-recs" onclick="getRecommendations()">Get Recommendations</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ RESULTS ═══════════════════════════════ -->
+<section class="results" id="results">
+  <div class="results-inner">
+    <h3 class="results-title"><span class="results-bar"></span> Your Matches</h3>
+    <p class="results-disclosure"><strong>Disclosure:</strong> Some product links may be affiliate links. We may earn a commission at no extra cost to you. Recommendations are based on practical factors such as budget, use case, comfort, features, and overall value. <strong>Prices and availability can change.</strong> Use the store links on each card to check the current price before buying.</p>
+    <div class="cards-grid" id="cards-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ GUIDES ═══════════════════════════════ -->
+<section class="guides">
+  <h2>Buying Guides</h2>
+  <div class="guide-list">
+
+    <div class="guide-item">
+      <button class="guide-btn" onclick="toggleGuide(this)">
+        <h4>Best Headphones Under $100 – Complete Guide</h4>
+        <svg class="guide-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <div class="guide-body">
+        <h3>What to Expect From Headphones Under $100</h3>
+        <p>Headphones under $100 are usually a step up from basic budget models. You can often find better battery life, softer ear cushions, stronger Bluetooth performance, app controls, and sometimes active noise cancellation. For example, Sony lists the WH-CH520 wireless headphones with up to 50 hours of battery life, quick charging, app-based EQ customization, and DSEE support for improving compressed music files. You should still keep expectations realistic. A $75 headphone may be very good for the money, but it probably will not match a premium $300 pair in noise cancellation, build quality, microphone performance, or sound detail.</p>
+
+        <h3>Best Overall Type: Wireless Over-Ear Headphones</h3>
+        <p>For most shoppers, wireless over-ear headphones are the safest all-around choice under $100. They are comfortable, easy to use, and work well for music, videos, podcasts, commuting, and casual listening.</p>
+        <p><strong>Look for:</strong> at least 30 hours of battery life, USB-C charging, comfortable ear cushions, Bluetooth stability, built-in microphone, foldable design, and app controls if available. If you listen for long periods, comfort may matter even more than sound quality.</p>
+
+        <h3>Best for Noise Cancellation</h3>
+        <p>If you want active noise cancellation under $100, Soundcore is one of the brands shoppers often consider. The Soundcore Life Q30 lists hybrid ANC, up to 60 hours of playtime with ANC off, and a 5-minute quick charge that gives about 4 hours of listening. ANC under $100 works best on steady sounds like fans, engines, and road noise — it may not fully block voices or sudden sounds.</p>
+
+        <h3>Wired vs Wireless Under $100</h3>
+        <div class="two-col">
+          <div><p class="col-head">Choose wireless if you want:</p><ul><li>Phone convenience</li><li>No cable</li><li>Built-in controls</li><li>Commuting or casual use</li></ul></div>
+          <div><p class="col-head">Choose wired if you want:</p><ul><li>No charging</li><li>Simple plug-and-play</li><li>Desktop/studio listening</li><li>Lower cost for the sound quality</li></ul></div>
+        </div>
+
+        <h3>FAQ</h3>
+        <p><strong>Are headphones under $100 good?</strong> Yes. Many are excellent for everyday listening, music, videos, podcasts, and calls. They may not match premium models, but they offer strong value.</p>
+        <p><strong>Can I get noise-canceling headphones under $100?</strong> Yes. Some budget headphones include ANC — just keep expectations realistic for steady background noise like fans or road sounds.</p>
+        <p><strong>What is the best battery life to look for?</strong> For wireless headphones, 30+ hours is good. 40–50 hours is very strong for this price range.</p>
+      </div>
+    </div>
+
+    <div class="guide-item">
+      <button class="guide-btn" onclick="toggleGuide(this)">
+        <h4>Best Headphones for Music Listening</h4>
+        <svg class="guide-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <div class="guide-body">
+        <h3>What Makes Headphones Good for Music?</h3>
+        <p>Good music headphones should make your favorite songs enjoyable without being uncomfortable or difficult to use. For most shoppers, the main things to consider are sound quality, comfort, wired or wireless connection, battery life, noise isolation, price, durability, and device compatibility.</p>
+        <ul>
+          <li>Do you mostly use your phone? Bluetooth may be best.</li>
+          <li>Do you listen at a desk or computer? Wired headphones may work well.</li>
+          <li>Do you listen for hours? Comfort should be a top priority.</li>
+          <li>Do you like heavy bass? Look for headphones known for stronger low-end sound.</li>
+        </ul>
+
+        <h3>Best Sound Profiles for Music</h3>
+        <div class="two-col">
+          <div><p class="col-head">Bass-Heavy</p><p style="font-size:.8rem">Emphasizes low-end. Great for hip-hop, metal, rock, EDM, workout music.</p></div>
+          <div><p class="col-head">Balanced</p><p style="font-size:.8rem">Keeps bass, vocals, and treble even. Safest all-around choice for mixed playlists.</p></div>
+          <div><p class="col-head">Bright / Clear</p><p style="font-size:.8rem">Focuses on vocals and detail. Great for acoustic, podcasts, jazz, classic rock.</p></div>
+          <div><p class="col-head">Warm</p><p style="font-size:.8rem">Smooth sound with extra body. Good for long sessions, blues, classic rock.</p></div>
+        </div>
+
+        <h3>Open-Back vs Closed-Back for Music</h3>
+        <p>Many music lovers prefer open-back headphones for their wider, more natural sound — instruments feel more separated. Closed-back headphones can also sound excellent and often deliver stronger bass impact, making them more practical for everyday environments.</p>
+
+        <h3>How Much Should You Spend?</h3>
+        <p><strong>Under $50:</strong> Basic everyday listening, budget Bluetooth, simple wired models.</p>
+        <p><strong>$50–$100:</strong> Better comfort, battery life, stronger brand options, improved sound.</p>
+        <p><strong>$100–$250:</strong> Better build, better ANC, better app controls, stronger overall performance.</p>
+        <p><strong>$250+:</strong> Premium sound, advanced ANC, higher-end materials, better long-term comfort.</p>
+
+        <h3>FAQ</h3>
+        <p><strong>What type of headphones are best for music?</strong> Over-ear headphones are often best because they are comfortable and provide a fuller sound. However, wireless on-ear headphones and earbuds can also be great for casual listening.</p>
+        <p><strong>Are wired headphones better for music than wireless?</strong> Not always. Modern Bluetooth headphones sound good enough for most listeners. The best choice depends on your device and how you listen.</p>
+        <p><strong>Are expensive headphones always better?</strong> Not always. Expensive headphones often have better materials and features, but the best choice is the one that fits your budget, device, and listening habits.</p>
+      </div>
+    </div>
+
+    <div class="guide-item">
+      <button class="guide-btn" onclick="toggleGuide(this)">
+        <h4>Open-Back vs Closed-Back Explained</h4>
+        <svg class="guide-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <div class="guide-body">
+        <h3>What Are Closed-Back Headphones?</h3>
+        <p>Closed-back headphones have earcups that are sealed on the outside. They usually keep more of your music inside the headphones and help block some outside noise. They are the most common type for everyday use — commuting, school, work, gaming, recording, or casual listening.</p>
+        <div class="two-col">
+          <div><p class="col-head">Pros</p><ul><li>Better privacy</li><li>Less sound leakage</li><li>Better for public use and recording</li><li>Usually stronger bass impact</li><li>Helps block outside noise</li></ul></div>
+          <div><p class="col-head">Cons</p><ul><li>Sound may feel less spacious</li><li>Ears may get warmer during long sessions</li><li>Some models can sound "boxed in"</li></ul></div>
+        </div>
+
+        <h3>What Are Open-Back Headphones?</h3>
+        <p>Open-back headphones have earcups that are open or vented on the outside, allowing air and sound to pass through. This design can make music sound more open, spacious, and natural — many describe it as a wider "soundstage" where music feels like it comes from around you rather than inside your head. The trade-off is that they leak sound and let in outside noise.</p>
+        <div class="two-col">
+          <div><p class="col-head">Pros</p><ul><li>More spacious, natural sound</li><li>Better airflow around the ears</li><li>Can be comfortable for long listening</li><li>Less "closed-in" feeling</li></ul></div>
+          <div><p class="col-head">Cons</p><ul><li>Leaks sound outward</li><li>Lets outside noise in</li><li>Not good for commuting or offices</li><li>Usually not good for recording</li></ul></div>
+        </div>
+
+        <h3>Which Should You Buy First?</h3>
+        <p>For most people, <strong>closed-back headphones</strong> should be the first choice. They are more versatile — useful at home, at work, while traveling, and in noisier environments. Open-back headphones are a more specialized choice, excellent for people who listen in quiet rooms and want a more open, spacious sound.</p>
+
+        <h3>Which Is Better for Recording?</h3>
+        <p>Closed-back headphones are usually better for recording. If you are recording vocals, podcasts, guitar, or voiceovers, closed-back headphones help prevent the backing track from leaking into the microphone. Many audio professionals use both: closed-back for recording and open-back for mixing or detailed listening.</p>
+
+        <h3>FAQ</h3>
+        <p><strong>Are open-back headphones better than closed-back?</strong> Not always. Open-back can sound more spacious and natural, but closed-back is more practical for everyday use, privacy, commuting, and recording.</p>
+        <p><strong>Can people hear open-back headphones?</strong> Yes. Open-back headphones leak sound, especially at moderate or high volume. They are not ideal for offices, libraries, or public places.</p>
+        <p><strong>Which type is better for commuting?</strong> Closed-back headphones are much better for commuting. Open-back let in too much outside noise and leak sound to people nearby.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ MORE GUIDES ═══════════════════════════════ -->
+<section class="more-guides">
+  <div class="more-guides-inner">
+    <h3>More Buying Guides</h3>
+    <div class="guide-links-grid">
+      <a class="guide-ext-link" href="best-headphones-under-50.html">Best Headphones Under $50</a>
+      <a class="guide-ext-link" href="best-headphones-under-100.html">Best Headphones Under $100</a>
+      <a class="guide-ext-link" href="best-headphones-for-music-listening.html">Best Headphones for Music Listening</a>
+      <a class="guide-ext-link" href="open-back-vs-closed-back-headphones.html">Open-Back vs Closed-Back Explained</a>
+      <a class="guide-ext-link" href="best-headphones-for-gaming.html">Best Headphones for Gaming</a>
+      <a class="guide-ext-link" href="best-headphones-for-commuting.html">Best Headphones for Commuting</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+<section class="about">
+  <div class="about-inner">
+    <button class="about-btn" onclick="toggleAbout(this)">
+      <h2>About Audio Gear Finder</h2>
+      <svg style="width:24px;height:24px;color:#555;transition:transform .3s;flex-shrink:0" class="about-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+    <div class="about-body" id="about-body">
+      <p>Audio Gear Finder is designed to make choosing headphones and audio gear simple, especially if you do not want to spend hours comparing specs, reviews, and confusing product listings.</p>
+      <p>Our selections are curated based on practical factors that matter to everyday listeners, including budget, listening style, comfort, sound quality, features, and overall value. Whether you are looking for headphones for music, gaming, workouts, travel, casual listening, or everyday use, Audio Gear Finder helps narrow down the choices so you can find gear that fits your needs without the guesswork.</p>
+      <p>Recommendations are organized by price range and listening preference, making it easier to compare options and choose confidently. Our goal is to help shoppers find reliable audio gear that sounds good, fits well, and offers strong value for the money.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer>
+  <p>Audio Gear Finder &copy; 2026. All Rights Reserved.</p>
+  <div class="foot-links">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════ PRODUCT DETAIL ═══════════════════════════════ -->
+<div class="product-detail-overlay" id="pd-overlay" onclick="closeProductDetail(event)">
+  <div class="product-detail-box" onclick="event.stopPropagation()">
+    <div class="pd-head">
+      <div>
+        <div class="pd-name" id="pd-name"></div>
+        <div class="pd-price" id="pd-price"></div>
+      </div>
+      <button class="pd-close" onclick="closeProductDetail()">&times;</button>
+    </div>
+    <div class="pd-img">
+      <img id="pd-img" src="" alt="" onerror="this.style.display='none'"/>
+    </div>
+    <div class="pd-meta">
+      <span class="pd-badge" id="pd-badge"></span>
+      <span class="pd-rating" id="pd-rating"></span>
+    </div>
+    <p class="pd-desc" id="pd-desc"></p>
+    <div class="pd-tags" id="pd-tags"></div>
+    <div class="pd-use-label">Best For</div>
+    <div class="pd-uses" id="pd-uses"></div>
+    <p class="pd-note">To check current pricing and availability, search for this product at your preferred retailer. Some links may be affiliate links — we may earn a small commission at no extra cost to you.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ MODALS ═══════════════════════════════ -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-head">
+      <h3 id="modal-title"></h3>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// ═══════════════ PRODUCT DATA ═══════════════
+const products = [
+  // OVER-EAR · UNDER $100
+  { id:1,  name:"Sony MDR-7506",            price:90,   type:"Over-Ear", use:["Music Listening","Studio","Commuting"],         rating:4.5, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/MDR7506-large.jpg",         desc:"Industry-standard closed-back monitoring headphone trusted by broadcast engineers and studio professionals worldwide.", tags:["Closed-Back","Wired","10Hz–20kHz","Neutral"] },
+  { id:2,  name:"Sennheiser HD 280 Pro",    price:99,   type:"Over-Ear", use:["Studio","Music Listening","Commuting"],         rating:4.4, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/HD280Pro-large.jpg",        desc:"Excellent passive noise isolation with a flat, accurate frequency response ideal for critical listening and monitoring.", tags:["Closed-Back","Wired","8Hz–25kHz","Neutral"] },
+  { id:20, name:"Philips SHP9500",          price:75,   type:"Over-Ear", use:["Music Listening","Gaming","Studio"],            rating:4.5, image:"https://c1.neweggimages.com/productimage/nb640/C688D2604290XQ8CM1A.jpg",             desc:"Open-back gem with a wide soundstage prized by gamers and music lovers alike. Breathable velour pads for all-day comfort.", tags:["Open-Back","Wired","12Hz–35kHz","Neutral"] },
+  { id:21, name:"Audio-Technica ATH-M20x",  price:49,   type:"Over-Ear", use:["Studio","Music Listening"],                    rating:4.3, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/ATHM20x-large.jpg",         desc:"Entry-level studio monitor with 40mm drivers and extended low-frequency response. A great first pro headphone.", tags:["Closed-Back","Wired","15Hz–20kHz","Neutral"] },
+  { id:22, name:"AKG K72",                  price:67,   type:"Over-Ear", use:["Studio","Music Listening"],                    rating:4.2, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/K72-large.jpg",              desc:"Self-adjusting headband, 40mm large-diaphragm drivers and reference-class accuracy for home studio tracking.", tags:["Closed-Back","Wired","16Hz–20kHz","Neutral"] },
+  { id:17, name:"HyperX Cloud II",          price:99,   type:"Over-Ear", use:["Gaming","Music Listening","Studio"],            rating:4.5, image:"https://pisces.bbystatic.com/prescaled/500/500/image2/BestBuy_US/images/products/6485/6485407_sd.jpg", desc:"Legendary gaming headset with virtual 7.1 surround sound, memory-foam cushions, and a durable steel frame.", tags:["Closed-Back","Wired/USB","15Hz–25kHz","V-Shaped"] },
+  // OVER-EAR · $100–$300
+  { id:3,  name:"Audio-Technica ATH-M50x",  price:149,  type:"Over-Ear", use:["Music Listening","Studio"],                    rating:4.7, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/ATHM50x-large.jpg",         desc:"Acclaimed studio monitor with exceptional clarity, deep bass extension, and professional-grade build quality.", tags:["Closed-Back","Wired","15Hz–28kHz","Balanced"] },
+  { id:4,  name:"Beyerdynamic DT 770 Pro",  price:179,  type:"Over-Ear", use:["Studio","Gaming","Music Listening"],            rating:4.6, image:"https://c1.neweggimages.com/productimage/nb640/A7NT_1_201608251734843801.jpg",       desc:"Comfortable closed-back built for long studio sessions and gaming. Wide soundstage with punchy low-end response.", tags:["Closed-Back","Wired","5Hz–35kHz","V-Shaped"] },
+  { id:5,  name:"Sennheiser HD 599",        price:199,  type:"Over-Ear", use:["Music Listening","Studio"],                    rating:4.5, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/HD599-large.jpg",           desc:"Open-back delivers a wide, natural soundstage. Warm and detailed, excellent for relaxed home listening.", tags:["Open-Back","Wired","12Hz–38.5kHz","Warm"] },
+  { id:18, name:"SteelSeries Arctis 7",     price:149,  type:"Over-Ear", use:["Gaming","Music Listening","Commuting"],         rating:4.4, image:"https://c1.neweggimages.com/productimage/nb640/26-249-215-V03.jpg",                  desc:"Wireless gaming headset with ClearCast bidirectional mic and ski-goggle headband for all-day comfort.", tags:["Closed-Back","Wireless","20Hz–20kHz","Balanced"] },
+  { id:23, name:"Sony WH-CH720N",           price:150,  type:"Over-Ear", use:["Commuting","Music Listening"],                 rating:4.4, image:"https://c1.neweggimages.com/productimage/nb640/A15TD2305101B7ERK71.jpg",             desc:"Lightweight ANC wireless headphone with 35-hour battery life and a slim, comfortable low-profile design.", tags:["Closed-Back","Wireless","20Hz–20kHz","Neutral"] },
+  { id:24, name:"HyperX Cloud Alpha",       price:100,  type:"Over-Ear", use:["Gaming","Studio","Music Listening"],            rating:4.6, image:"https://c1.neweggimages.com/productimage/nb640/C02WS2510090GJ6WR12.jpg",             desc:"Dual-chamber drivers deliver clear separation between bass and mids for immersive gaming and music.", tags:["Closed-Back","Wired","13Hz–27kHz","V-Shaped"] },
+  { id:25, name:"Razer BlackShark V2",      price:100,  type:"Over-Ear", use:["Gaming","Studio"],                             rating:4.5, image:"https://c1.neweggimages.com/productimage/nb640/A17PD2404010V71LCEF.jpg",             desc:"TriForce titanium 50mm drivers and THX 7.1 Spatial Audio engineered for competitive gaming.", tags:["Closed-Back","Wired","12Hz–28kHz","V-Shaped"] },
+  { id:26, name:"Sennheiser HD 560S",       price:200,  type:"Over-Ear", use:["Music Listening","Studio"],                    rating:4.6, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/HD560S-large.jpg",           desc:"Neutral open-back tuning with excellent soundstage for analytical listening and mastering work.", tags:["Open-Back","Wired","6Hz–38kHz","Neutral"] },
+  { id:27, name:"Astro A50",                price:299,  type:"Over-Ear", use:["Gaming","Music Listening"],                    rating:4.3, image:"https://c1.neweggimages.com/productimage/nb640/BA9ZD24013107CE5206.jpg",             desc:"Premium wireless gaming audio with Dolby Audio processing and a convenient base station for charging.", tags:["Closed-Back","Wireless","20Hz–20kHz","Warm"] },
+  // OVER-EAR · $300+
+  { id:6,  name:"Sennheiser HD 650",        price:349,  type:"Over-Ear", use:["Music Listening","Studio"],                    rating:4.8, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/HD650-large.jpg",            desc:"Reference open-back with warm, natural sound beloved by audiophiles. Incredibly smooth midrange and refined treble.", tags:["Open-Back","Wired","10Hz–41kHz","Warm"] },
+  { id:7,  name:"Beyerdynamic DT 1990 Pro", price:449,  type:"Over-Ear", use:["Studio","Music Listening"],                    rating:4.7, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/DT1990Pro-large.jpg",       desc:"Semi-open analytical masterpiece for professional mixing and mastering. Highly detailed with extended highs.", tags:["Semi-Open","Wired","5Hz–40kHz","Analytical"] },
+  { id:28, name:"Sony WH-1000XM5",          price:350,  type:"Over-Ear", use:["Commuting","Music Listening"],                 rating:4.8, image:"https://pisces.bbystatic.com/prescaled/500/500/image2/BestBuy_US/images/products/6505/6505727_sd.jpg", desc:"Industry-leading noise cancellation with 30-hour battery life and premium hands-free call quality.", tags:["Closed-Back","Wireless","4Hz–40kHz","Warm"] },
+  { id:29, name:"Sony WH-1000XM4",          price:279,  type:"Over-Ear", use:["Commuting","Music Listening","Gaming"],         rating:4.8, image:"https://c1.neweggimages.com/productimage/nb640/AE9TD2102190848S.jpg",               desc:"Industry-best ANC with multipoint connection, 30-hour battery, and exceptionally comfortable fit.", tags:["Closed-Back","Wireless","4Hz–40kHz","Warm"] },
+  { id:30, name:"Beyerdynamic DT 900 Pro X", price:299, type:"Over-Ear", use:["Studio","Music Listening"],                    rating:4.7, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/DT900ProX-large.jpg",       desc:"Open-back reference flagship for mastering engineers. Exceptional imaging and neutral response.", tags:["Open-Back","Wired","5Hz–40kHz","Neutral"] },
+  { id:31, name:"Meze 99 Classics",         price:309,  type:"Over-Ear", use:["Music Listening","Commuting"],                 rating:4.6, image:"https://cdn.shopify.com/s/files/1/1503/1368/files/Meze-Audio-99-Classics-Gold-headphone-01_a1be7be4-d059-4354-8797-c4f1035e9e28.webp", desc:"Handcrafted walnut and zinc-alloy cups with natural warm sound. A beautiful audiophile portable.", tags:["Closed-Back","Wired","15Hz–25kHz","Warm"] },
+  // ON-EAR · UNDER $100
+  { id:8,  name:"Koss Porta Pro",           price:49,   type:"On-Ear",   use:["Music Listening","Commuting","Gaming"],         rating:4.3, image:"https://koss.com/cdn/shop/files/PortaProLimitedEditionBlackGold2.jpg?crop=center&height=2048&v=1762796670&width=2048", desc:"Legendary portable on-ear with surprisingly big warm sound. Fun tuning that suits rock and pop perfectly.", tags:["Open-Back","Wired","15Hz–25kHz","Warm"] },
+  { id:9,  name:"Grado SR60x",              price:79,   type:"On-Ear",   use:["Music Listening","Studio"],                    rating:4.4, image:"https://gradolabs.com/cdn/shop/files/SR60x-side.jpg?v=1774309784&width=1946",       desc:"Open-back on-ear with energetic, musical character. US-made with a lively sound that excels on rock and acoustic.", tags:["Open-Back","Wired","20Hz–20kHz","Bright"] },
+  { id:32, name:"Skullcandy Hesh 3",        price:80,   type:"On-Ear",   use:["Music Listening","Gaming","Commuting"],         rating:4.2, image:"https://c1.neweggimages.com/productimage/nb640/C41AD2604220CN5M5F8.jpg",             desc:"Wireless on-ear with 22-hour battery and built-in mic. Bass-forward sound great for gaming and everyday use.", tags:["Closed-Back","Bluetooth","20Hz–20kHz","Bass-Forward"] },
+  { id:33, name:"JLab Studio Pro",          price:50,   type:"On-Ear",   use:["Music Listening","Commuting","Gaming","Studio"],rating:4.1, image:"https://c1.neweggimages.com/productimage/nb640/A8C7D200611UY8GW.jpg",               desc:"Wireless on-ear with 3 EQ presets, 50-hour battery, and a foldable design perfect for commuters.", tags:["Closed-Back","Bluetooth","20Hz–20kHz","Balanced"] },
+  { id:34, name:"Plantronics BackBeat 500", price:65,   type:"On-Ear",   use:["Music Listening","Commuting","Gaming"],         rating:4.0, image:"https://c1.neweggimages.com/productimage/nb640/ABMT_1_201912041798328566.jpg",       desc:"Lightweight and foldable on-ear with 18-hour battery. Clean sound for daily commuting or casual gaming.", tags:["Closed-Back","Bluetooth","20Hz–20kHz","Balanced"] },
+  // ON-EAR · $100–$300
+  { id:10, name:"Marshall Major IV",        price:149,  type:"On-Ear",   use:["Music Listening","Commuting"],                 rating:4.2, image:"https://c1.neweggimages.com/productimage/nb640/AG7MD2507010CJTRN0F.jpg",             desc:"Iconic guitar-amp styling, Bluetooth, and 80-hour battery. Fun bass-forward sound for everyday listening.", tags:["Closed-Back","Bluetooth","20Hz–20kHz","Bass-Forward"] },
+  { id:35, name:"Grado SR80x",              price:125,  type:"On-Ear",   use:["Music Listening","Studio"],                    rating:4.5, image:"https://gradolabs.com/cdn/shop/files/SR80x-side.jpg?width=1946",                    desc:"US-made open-back with an energetic treble lift. Outstanding for acoustic, jazz, and home studio work.", tags:["Open-Back","Wired","20Hz–20kHz","Bright"] },
+  { id:36, name:"Sennheiser HD 25",         price:149,  type:"On-Ear",   use:["Studio","Commuting","Music Listening","Gaming"],rating:4.6, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/HD25-large.jpg",            desc:"Iconic DJ monitor since 1988. Excellent passive isolation, punchy sound, and rock-solid build quality.", tags:["Closed-Back","Wired","16Hz–22kHz","Neutral"] },
+  { id:37, name:"Grado SR325x",             price:295,  type:"On-Ear",   use:["Music Listening","Studio"],                    rating:4.7, image:"https://gradolabs.com/cdn/shop/files/SR325x-side_copy_32b876dc-2fa4-4b78-91f1-74336c4985d8.jpg", desc:"Aluminium-housed reference Grado with extended frequency reach and a dynamic, exciting presentation.", tags:["Open-Back","Wired","18Hz–24kHz","Bright"] },
+  { id:38, name:"Skullcandy Crusher Evo",   price:200,  type:"On-Ear",   use:["Music Listening","Gaming","Commuting"],         rating:4.3, image:"https://c1.neweggimages.com/productimage/nb640/A2GAS200903yvgiT.jpg",               desc:"Adjustable haptic bass engine creates a physical sensation that makes bass-heavy music and gaming visceral.", tags:["Closed-Back","Bluetooth","20Hz–20kHz","Bass-Forward"] },
+  // ON-EAR · $300+
+  { id:11, name:"Grado RS2x",               price:395,  type:"On-Ear",   use:["Music Listening","Studio","Gaming"],            rating:4.6, image:"https://gradolabs.com/cdn/shop/products/GradoRSX2-028-Edit.jpg",                   desc:"Handcrafted in Brooklyn with a warm mahogany housing and lively open-back sound. Exceptional midrange presence.", tags:["Open-Back","Wired","14Hz–25kHz","Warm"] },
+  { id:39, name:"Focal Listen Professional", price:449, type:"On-Ear",   use:["Studio","Music Listening","Gaming"],            rating:4.5, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/ListenPro-large.jpg",      desc:"French studio reference with low distortion and precise imaging. Loved by mixing engineers worldwide.", tags:["Closed-Back","Wired","15Hz–22kHz","Neutral"] },
+  { id:40, name:"Audeze LCD-2 Classic",     price:799,  type:"On-Ear",   use:["Music Listening","Studio"],                    rating:4.7, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/LCD2Classic-large.jpg",    desc:"Planar magnetic flagship with rich, warm sound and reference-grade detail. A studio staple from Audeze.", tags:["Open-Back","Wired","10Hz–50kHz","Warm"] },
+  { id:41, name:"Sennheiser HD 800 S",      price:1599, type:"On-Ear",   use:["Music Listening","Studio"],                    rating:4.9, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/HD800S-large.jpg",         desc:"Reference open-back with the widest soundstage in headphones. Beloved by audiophiles and mastering engineers.", tags:["Open-Back","Wired","4Hz–51kHz","Analytical"] },
+  // IN-EAR · UNDER $100
+  { id:12, name:"Moondrop Aria",            price:79,   type:"In-Ear",   use:["Music Listening","Commuting","Studio"],         rating:4.6, image:"https://c1.neweggimages.com/productimage/nb640/AUXAD2304150ZZCM31A.jpg",            desc:"Chi-fi darling with smooth balanced response tuned to the Harman target. Outstanding value.", tags:["Wired","Single DD","20Hz–20kHz","Neutral"] },
+  { id:13, name:"KZ ZS10 Pro",              price:39,   type:"In-Ear",   use:["Music Listening","Gaming"],                    rating:4.2, image:"https://www.linsoul.com/cdn/shop/products/10_88f25a68-314b-4777-a5ed-d0dbc9e6d463.jpg?v=1629800987&width=1946", desc:"Hybrid driver IEM with a V-shaped signature. Strong bass and crisp treble at a budget price.", tags:["Wired","Hybrid Driver","20Hz–20kHz","V-Shaped"] },
+  { id:42, name:"Tin HiFi T2 Plus",         price:60,   type:"In-Ear",   use:["Music Listening","Studio"],                    rating:4.4, image:"https://c1.neweggimages.com/productimage/nb640/BTSND240703087OAZE3.jpg",            desc:"Metal-shelled reference IEM with accurate, airy treble and a flat studio-style response.", tags:["Wired","Single DD","10Hz–20kHz","Neutral"] },
+  { id:43, name:"1More Triple Driver",      price:80,   type:"In-Ear",   use:["Music Listening","Commuting"],                 rating:4.4, image:"https://c1.neweggimages.com/productimage/nb640/B7VES2405230RPEZ602.jpg",            desc:"Award-winning three-driver IEM with rich balanced sound and premium angled metal housing.", tags:["Wired","Triple Driver","20Hz–40kHz","Balanced"] },
+  { id:44, name:"HyperX Cloud Earbuds II",  price:35,   type:"In-Ear",   use:["Gaming","Commuting","Music Listening"],         rating:4.2, image:"https://c1.neweggimages.com/productimage/nb640/ARVFD211019FI9ES.jpg",              desc:"Compact gaming IEM designed for mobile play with a custom-tuned driver for clear in-game audio.", tags:["Wired","Single DD","20Hz–20kHz","V-Shaped"] },
+  // IN-EAR · $100–$300
+  { id:14, name:"Shure SE215",              price:109,  type:"In-Ear",   use:["Music Listening","Commuting","Gaming","Studio"],rating:4.4, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/SE215-large.jpg",          desc:"Professional IEM with secure over-ear cable. Excellent passive isolation and warm bass-forward sound.", tags:["Wired","Single DD","22Hz–17.5kHz","Warm"] },
+  { id:15, name:"Etymotic ER4SR",           price:249,  type:"In-Ear",   use:["Music Listening","Studio"],                    rating:4.5, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/ER4SR-large.jpg",          desc:"Studio-grade reference IEM. Incredibly detailed and flat, designed for critical listeners.", tags:["Wired","Balanced Armature","20Hz–16kHz","Reference"] },
+  { id:45, name:"Moondrop Kato",            price:190,  type:"In-Ear",   use:["Music Listening","Studio","Commuting"],         rating:4.7, image:"https://c1.neweggimages.com/productimage/nb640/B5ZAD2304141CCR66FA.jpg",           desc:"Precision-machined stainless steel IEM tuned for natural, reference-quality listening.", tags:["Wired","Single DD","20Hz–20kHz","Neutral"] },
+  { id:46, name:"FiiO FH3",                 price:120,  type:"In-Ear",   use:["Music Listening","Studio","Gaming"],            rating:4.5, image:"https://c1.neweggimages.com/productimage/nb640/AUXAD2407200EMJSVC2.jpg",           desc:"1DD+2BA hybrid IEM with excellent detail retrieval and an engaging U-shaped sound signature.", tags:["Wired","Hybrid Driver","10Hz–40kHz","V-Shaped"] },
+  { id:47, name:"Sony WF-1000XM4",          price:180,  type:"In-Ear",   use:["Commuting","Music Listening"],                 rating:4.7, image:"https://c1.neweggimages.com/productimage/nb640/A29PD2401301CABTSCB.jpg",           desc:"Industry-leading TWS ANC earbuds with LDAC hi-res codec and 36-hour total battery life.", tags:["Wireless","ANC","20Hz–20kHz","Warm"] },
+  { id:48, name:"Apple AirPods Pro (2nd Gen)", price:249, type:"In-Ear", use:["Commuting","Music Listening","Gaming"],         rating:4.8, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/AirPodsPro2-large.jpg",   desc:"Best-in-class ANC with Transparency mode, spatial audio, and seamless Apple ecosystem integration.", tags:["Wireless","ANC","20Hz–20kHz","Balanced"] },
+  // IN-EAR · $300+
+  { id:16, name:"Campfire Audio Andromeda", price:1099, type:"In-Ear",   use:["Music Listening","Studio"],                    rating:4.8, image:"https://bloomaudio.com/cdn/shop/products/campfire-audio-andromeda-2023-hr1-thumbnail.jpg?v=1676945007&width=1000", desc:"Five-driver CIEM-inspired universal with a lush wide soundstage. Audiophile-grade clarity and resolution.", tags:["Wired","5-BA Driver","5Hz–20kHz","Neutral-Bright"] },
+  { id:49, name:"Shure SE846",              price:499,  type:"In-Ear",   use:["Music Listening","Studio","Gaming"],            rating:4.7, image:"https://media.sweetwater.com/api/i/q-82/images/items/750/SE846-large.jpg",          desc:"Four-driver professional IEM with swappable nozzle filters to choose between three sound signatures.", tags:["Wired","4-BA Driver","15Hz–20kHz","Reference"] },
+  { id:50, name:"Sony IER-M9",              price:700,  type:"In-Ear",   use:["Music Listening","Studio","Commuting"],         rating:4.7, image:"https://sony.scene7.com/is/image/sonyglobalsolutions/IER-M9?fmt=png-alpha&wid=600&hei=600", desc:"Sony's flagship 5-driver balanced-armature IEM trusted by touring professionals worldwide.", tags:["Wired","5-BA Driver","5Hz–40kHz","Neutral"] },
+  { id:51, name:"64 Audio U4s",             price:899,  type:"In-Ear",   use:["Music Listening","Studio"],                    rating:4.8, image:"https://www.64audio.com/cdn/shop/products/U4s-PLP-2_1200x1200.jpg",                desc:"Universal-fit CIEM with apex module technology for natural pressure relief and a holographic stage.", tags:["Wired","4-BA Driver","10Hz–20kHz","Neutral"] },
+];
+
+// ═══════════════ FILTER LOGIC ═══════════════
+function getRecommendations() {
+  const budget  = document.getElementById('sel-budget').value;
+  const useCase = document.getElementById('sel-use').value;
+  const type    = document.getElementById('sel-type').value;
+
+  const matchBudget = p => {
+    if (!budget) return true;
+    if (budget === 'under100') return p.price <= 100;
+    if (budget === 'mid')      return p.price > 100 && p.price <= 300;
+    if (budget === 'high')     return p.price > 300;
+    return true;
+  };
+  const matchType = p => !type    || p.type === type;
+  const matchUse  = p => !useCase || p.use.includes(useCase);
+
+  let tier1 = products.filter(p => matchBudget(p) && matchType(p) && matchUse(p));
+  if (tier1.length >= 4) { renderCards(tier1.slice(0,8)); return; }
+
+  const ids1 = new Set(tier1.map(p=>p.id));
+  const tier2 = products.filter(p => !ids1.has(p.id) && matchBudget(p) && matchType(p));
+  const c2 = [...tier1, ...tier2];
+  if (c2.length >= 4) { renderCards(c2.slice(0,8)); return; }
+
+  const ids2 = new Set(c2.map(p=>p.id));
+  const tier3 = products.filter(p => !ids2.has(p.id) && matchType(p));
+  const c3 = [...c2, ...tier3];
+  if (c3.length >= 4) { renderCards(c3.slice(0,8)); return; }
+
+  const ids3 = new Set(c3.map(p=>p.id));
+  const pad = [...products].filter(p=>!ids3.has(p.id)).sort((a,b)=>b.rating-a.rating);
+  renderCards([...c3,...pad].slice(0,8));
+}
+
+// ═══════════════ RENDER CARDS ═══════════════
+const typeColors = {
+  'Over-Ear': { bg:'#dde0f0', fg:'#6270b8' },
+  'On-Ear':   { bg:'#d5ece3', fg:'#4a9e7a' },
+  'In-Ear':   { bg:'#f0e8d5', fg:'#b87c30' },
+};
+
+// ═══════════════ STORE LINKS ═══════════════
+// Search URLs are real and reliable — replace with affiliate links when available.
+const storeLinks = {
+  1:  [{ url:'https://www.amazon.com/s?k=Sony+MDR-7506',                        label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Sony+MDR-7506',                        label:'Check at Sweetwater'   }],
+  2:  [{ url:'https://www.amazon.com/s?k=Sennheiser+HD+280+Pro',                label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Sennheiser+HD+280+Pro',                label:'Check at Sweetwater'   }],
+  3:  [{ url:'https://www.amazon.com/s?k=Audio-Technica+ATH-M50x',              label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Audio-Technica+ATH-M50x',              label:'Check at Sweetwater'   }],
+  4:  [{ url:'https://www.amazon.com/s?k=Beyerdynamic+DT+770+Pro',              label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Beyerdynamic+DT+770+Pro',              label:'Check at Sweetwater'   }],
+  5:  [{ url:'https://www.amazon.com/s?k=Sennheiser+HD+599',                    label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Sennheiser+HD+599',                    label:'Check at Sweetwater'   }],
+  6:  [{ url:'https://www.amazon.com/s?k=Sennheiser+HD+650',                    label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Sennheiser+HD+650',                    label:'Check at Sweetwater'   }],
+  7:  [{ url:'https://www.amazon.com/s?k=Beyerdynamic+DT+1990+Pro',             label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Beyerdynamic+DT+1990+Pro',             label:'Check at Sweetwater'   }],
+  8:  [{ url:'https://www.amazon.com/s?k=Koss+Porta+Pro',                       label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Koss+Porta+Pro',                       label:'Check at Best Buy'     }],
+  9:  [{ url:'https://www.amazon.com/s?k=Grado+SR60x',                          label:'Check on Amazon'       }, { url:'https://www.crutchfield.com/search/?q=Grado+SR60x',                          label:'Check at Crutchfield'  }],
+  10: [{ url:'https://www.amazon.com/s?k=Marshall+Major+IV',                    label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Marshall+Major+IV',                    label:'Check at Best Buy'     }],
+  11: [{ url:'https://www.amazon.com/s?k=Grado+RS2x',                           label:'Check on Amazon'       }, { url:'https://www.crutchfield.com/search/?q=Grado+RS2x',                           label:'Check at Crutchfield'  }],
+  12: [{ url:'https://www.amazon.com/s?k=Moondrop+Aria',                        label:'Check on Amazon'       }, { url:'https://www.crutchfield.com/search/?q=Moondrop+Aria',                        label:'Check at Crutchfield'  }],
+  13: [{ url:'https://www.amazon.com/s?k=KZ+ZS10+Pro',                          label:'Check on Amazon'       }],
+  14: [{ url:'https://www.amazon.com/s?k=Shure+SE215',                          label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Shure+SE215',                          label:'Check at Sweetwater'   }],
+  15: [{ url:'https://www.amazon.com/s?k=Etymotic+ER4SR',                       label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Etymotic+ER4SR',                       label:'Check at Sweetwater'   }],
+  16: [{ url:'https://www.amazon.com/s?k=Campfire+Audio+Andromeda',             label:'Check on Amazon'       }, { url:'https://www.crutchfield.com/search/?q=Campfire+Audio+Andromeda',             label:'Check at Crutchfield'  }],
+  17: [{ url:'https://www.amazon.com/s?k=HyperX+Cloud+II',                      label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=HyperX+Cloud+II',                      label:'Check at Best Buy'     }],
+  18: [{ url:'https://www.amazon.com/s?k=SteelSeries+Arctis+7',                 label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=SteelSeries+Arctis+7',                 label:'Check at Best Buy'     }],
+  20: [{ url:'https://www.amazon.com/s?k=Philips+SHP9500',                      label:'Check on Amazon'       }, { url:'https://www.bhphotovideo.com/c/search?q=Philips+SHP9500',                      label:'Check at B&H Photo'    }],
+  21: [{ url:'https://www.amazon.com/s?k=Audio-Technica+ATH-M20x',              label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Audio-Technica+ATH-M20x',              label:'Check at Sweetwater'   }],
+  22: [{ url:'https://www.amazon.com/s?k=AKG+K72',                              label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=AKG+K72',                              label:'Check at Sweetwater'   }],
+  23: [{ url:'https://www.amazon.com/s?k=Sony+WH-CH720N',                       label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Sony+WH-CH720N',                       label:'Check at Best Buy'     }],
+  24: [{ url:'https://www.amazon.com/s?k=HyperX+Cloud+Alpha',                   label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=HyperX+Cloud+Alpha',                   label:'Check at Best Buy'     }],
+  25: [{ url:'https://www.amazon.com/s?k=Razer+BlackShark+V2',                  label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Razer+BlackShark+V2',                  label:'Check at Best Buy'     }],
+  26: [{ url:'https://www.amazon.com/s?k=Sennheiser+HD+560S',                   label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Sennheiser+HD+560S',                   label:'Check at Sweetwater'   }],
+  27: [{ url:'https://www.amazon.com/s?k=Astro+A50',                            label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Astro+A50',                            label:'Check at Best Buy'     }],
+  28: [{ url:'https://www.amazon.com/s?k=Sony+WH-1000XM5',                      label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Sony+WH-1000XM5',                      label:'Check at Best Buy'     }],
+  29: [{ url:'https://www.amazon.com/s?k=Sony+WH-1000XM4',                      label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Sony+WH-1000XM4',                      label:'Check at Best Buy'     }],
+  30: [{ url:'https://www.amazon.com/s?k=Beyerdynamic+DT+900+Pro+X',            label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Beyerdynamic+DT+900+Pro+X',            label:'Check at Sweetwater'   }],
+  31: [{ url:'https://www.amazon.com/s?k=Meze+99+Classics',                     label:'Check on Amazon'       }, { url:'https://www.crutchfield.com/search/?q=Meze+99+Classics',                     label:'Check at Crutchfield'  }],
+  32: [{ url:'https://www.amazon.com/s?k=Skullcandy+Hesh+3',                    label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Skullcandy+Hesh+3',                    label:'Check at Best Buy'     }],
+  33: [{ url:'https://www.amazon.com/s?k=JLab+Studio+Pro',                      label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=JLab+Studio+Pro',                      label:'Check at Best Buy'     }],
+  34: [{ url:'https://www.amazon.com/s?k=Plantronics+BackBeat+500',             label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Plantronics+BackBeat+500',             label:'Check at Best Buy'     }],
+  35: [{ url:'https://www.amazon.com/s?k=Grado+SR80x',                          label:'Check on Amazon'       }, { url:'https://www.crutchfield.com/search/?q=Grado+SR80x',                          label:'Check at Crutchfield'  }],
+  36: [{ url:'https://www.amazon.com/s?k=Sennheiser+HD+25',                     label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Sennheiser+HD+25',                     label:'Check at Sweetwater'   }],
+  37: [{ url:'https://www.amazon.com/s?k=Grado+SR325x',                         label:'Check on Amazon'       }, { url:'https://www.crutchfield.com/search/?q=Grado+SR325x',                         label:'Check at Crutchfield'  }],
+  38: [{ url:'https://www.amazon.com/s?k=Skullcandy+Crusher+Evo',               label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Skullcandy+Crusher+Evo',               label:'Check at Best Buy'     }],
+  39: [{ url:'https://www.amazon.com/s?k=Focal+Listen+Professional',            label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Focal+Listen+Professional',            label:'Check at Sweetwater'   }],
+  40: [{ url:'https://www.amazon.com/s?k=Audeze+LCD-2+Classic',                 label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Audeze+LCD-2+Classic',                 label:'Check at Sweetwater'   }],
+  41: [{ url:'https://www.amazon.com/s?k=Sennheiser+HD+800+S',                  label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Sennheiser+HD+800+S',                  label:'Check at Sweetwater'   }],
+  42: [{ url:'https://www.amazon.com/s?k=Tin+HiFi+T2+Plus',                     label:'Check on Amazon'       }],
+  43: [{ url:'https://www.amazon.com/s?k=1More+Triple+Driver',                   label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=1More+Triple+Driver',                   label:'Check at Best Buy'     }],
+  44: [{ url:'https://www.amazon.com/s?k=HyperX+Cloud+Earbuds+II',              label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=HyperX+Cloud+Earbuds+II',              label:'Check at Best Buy'     }],
+  45: [{ url:'https://www.amazon.com/s?k=Moondrop+Kato',                        label:'Check on Amazon'       }, { url:'https://www.crutchfield.com/search/?q=Moondrop+Kato',                        label:'Check at Crutchfield'  }],
+  46: [{ url:'https://www.amazon.com/s?k=FiiO+FH3',                             label:'Check on Amazon'       }, { url:'https://www.crutchfield.com/search/?q=FiiO+FH3',                             label:'Check at Crutchfield'  }],
+  47: [{ url:'https://www.amazon.com/s?k=Sony+WF-1000XM4',                      label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Sony+WF-1000XM4',                      label:'Check at Best Buy'     }],
+  48: [{ url:'https://www.amazon.com/s?k=Apple+AirPods+Pro+2nd+Generation',     label:'Check on Amazon'       }, { url:'https://www.bestbuy.com/site/searchpage.jsp?st=Apple+AirPods+Pro+2nd+Generation',     label:'Check at Best Buy'     }],
+  49: [{ url:'https://www.amazon.com/s?k=Shure+SE846',                          label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Shure+SE846',                          label:'Check at Sweetwater'   }],
+  50: [{ url:'https://www.amazon.com/s?k=Sony+IER-M9',                          label:'Check on Amazon'       }, { url:'https://www.sweetwater.com/store/search.php?s=Sony+IER-M9',                          label:'Check at Sweetwater'   }],
+  51: [{ url:'https://www.amazon.com/s?k=64+Audio+U4s',                         label:'Check on Amazon'       }, { url:'https://www.crutchfield.com/search/?q=64+Audio+U4s',                         label:'Check at Crutchfield'  }],
+};
+
+function renderCards(list) {
+  const grid = document.getElementById('cards-grid');
+  grid.innerHTML = '';
+  list.forEach((p, i) => {
+    const col = typeColors[p.type] || typeColors['Over-Ear'];
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.animationDelay = (i * 0.1) + 's';
+    card.innerHTML = `
+      <div class="card-img">
+        <img src="${p.image}" alt="${p.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="card-fallback" style="display:none;background:${col.bg}">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="${col.fg}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+          </svg>
+        </div>
+        <span class="card-badge">${p.type}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-head">
+          <span class="card-name">${p.name}</span>
+          <span class="card-price">$${p.price}</span>
+        </div>
+        <p class="card-desc">${p.desc}</p>
+        <div class="card-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <div class="card-foot">
+          <span class="card-rating">★ ${p.rating}</span>
+          <button class="btn-deal" onclick="openProductDetail(${p.id})">
+            View Details
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+        ${(storeLinks[p.id]||[]).length>0?`<div class="card-stores"><p class="store-label">Check current price:</p>${(storeLinks[p.id]||[]).map(s=>`<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="btn-store">${s.label}<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>`).join('')}</div>`:''}
+      </div>`;
+    grid.appendChild(card);
+  });
+  const results = document.getElementById('results');
+  results.classList.add('visible');
+  setTimeout(() => results.scrollIntoView({ behavior:'smooth', block:'start' }), 100);
+}
+
+// ═══════════════ UI HELPERS ═══════════════
+function toggleGuide(btn) {
+  const body = btn.nextElementSibling;
+  const chev = btn.querySelector('.guide-chev');
+  body.classList.toggle('open');
+  chev.classList.toggle('open');
+}
+
+function toggleAbout(btn) {
+  const body = document.getElementById('about-body');
+  const chev = btn.querySelector('.about-chev');
+  body.classList.toggle('open');
+  if (chev) chev.style.transform = body.classList.contains('open') ? 'rotate(90deg)' : '';
+}
+
+function showFinder() {
+  const f = document.getElementById('finder');
+  f.style.display = 'block';
+  setTimeout(() => f.scrollIntoView({ behavior: 'smooth' }), 50);
+}
+
+function openProductDetail(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('pd-name').textContent = p.name;
+  document.getElementById('pd-price').textContent = '$' + p.price;
+  const img = document.getElementById('pd-img');
+  img.src = p.image;
+  img.alt = p.name;
+  img.style.display = '';
+  document.getElementById('pd-badge').textContent = p.type;
+  document.getElementById('pd-rating').textContent = '★ ' + p.rating;
+  document.getElementById('pd-desc').textContent = p.desc;
+  document.getElementById('pd-tags').innerHTML = p.tags.map(t => `<span class="pd-tag">${t}</span>`).join('');
+  document.getElementById('pd-uses').innerHTML = p.use.map(u => `<span class="pd-use">${u}</span>`).join('');
+  document.getElementById('pd-overlay').classList.add('open');
+}
+
+function closeProductDetail(e) {
+  if (!e || e.target === document.getElementById('pd-overlay')) {
+    document.getElementById('pd-overlay').classList.remove('open');
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeProductDetail(); } });
+
+// ═══════════════ MODAL CONTENT ═══════════════
+const modals = {
+  privacy: {
+    title: 'Privacy Policy',
+    body: `<p class="modal-date">Effective Date: April 25, 2026</p>
+      <p>This Privacy Policy explains how information is collected and used when you visit Audio Gear Finder.</p>
+      <h4>Information We Collect</h4>
+      <p>We may collect non-personal information such as browser type, device type, pages visited, and time spent on the site.</p>
+      <h4>Cookies and Advertising</h4>
+      <p>This website uses cookies to enhance functionality and display relevant advertisements. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this and other websites.</p>
+      <h4>Google AdSense</h4>
+      <p>Google may use the DoubleClick cookie to show ads. You can opt out of personalized advertising by visiting: <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">https://adssettings.google.com</a></p>
+      <h4>Affiliate Disclosure</h4>
+      <p>Some links on this website may be affiliate links. This means we may earn a commission if you click a link and make a purchase, at no additional cost to you.</p>
+      <h4>Third-Party Links</h4>
+      <p>This website may contain links to third-party websites. We are not responsible for their content or privacy practices.</p>
+      <h4>Changes to This Policy</h4>
+      <p>We may update this Privacy Policy at any time. Updates will be posted on this page.</p>`
+  },
+  terms: {
+    title: 'Terms of Service',
+    body: `<p class="modal-date">Effective Date: April 25, 2026</p>
+      <p>By using this website, you agree to the following terms:</p>
+      <h4>Use of Website</h4>
+      <p>This website provides informational content and tools designed to help users make decisions about audio gear. All content is for general informational purposes only.</p>
+      <h4>No Guarantees</h4>
+      <p>We do not guarantee the accuracy, completeness, or reliability of any information or recommendations.</p>
+      <h4>Affiliate Disclosure</h4>
+      <p>This website may contain affiliate links. We may earn a commission from purchases made through these links.</p>
+      <h4>User Responsibility</h4>
+      <p>You are responsible for how you use the information provided. We are not liable for any decisions or outcomes resulting from use of this site.</p>
+      <h4>Limitation of Liability</h4>
+      <p>We are not liable for any direct or indirect damages arising from use of this website.</p>
+      <h4>Changes to Terms</h4>
+      <p>We may update these terms at any time without notice. By continuing to use this website, you agree to these terms.</p>`
+  },
+  affiliate: {
+    title: 'Affiliate Disclosure',
+    body: `<p>Audio Gear Finder participates in affiliate advertising programs. Some links on this website are affiliate links, which means we may earn a commission if you click a link and make a purchase — at no additional cost to you.</p>
+      <p>Affiliate relationships do not influence our recommendations. We aim to provide honest, practical guidance to help you find audio gear that fits your needs and budget.</p>
+      <p>We only reference products and brands we believe offer genuine value to everyday listeners.</p>`
+  }
+};
+
+function openModal(key) {
+  const m = modals[key];
+  document.getElementById('modal-title').textContent = m.title;
+  document.getElementById('modal-body').innerHTML = m.body;
+  document.getElementById('modal').classList.add('open');
+}
+
+function closeModal(e) {
+  if (!e || e.target === document.getElementById('modal')) {
+    document.getElementById('modal').classList.remove('open');
+  }
+}
+
+</script>
+</body>
+</html>
